@@ -1,0 +1,12 @@
+<div class="header">
+    <h1>inicia sesion a nuestra biblioteca</h1>
+  </div>
+  
+  <div class="registration-container">
+    <h1 class="registration-title">Iniciar sesión</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+      <input type="email" formControlName="email" placeholder="Correo electrónico">
+      <input type="password" formControlName="password" placeholder="Contraseña">
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>

@@ -1,0 +1,11 @@
+<nav>
+    <img src="https://w7.pngwing.com/pngs/469/374/png-transparent-ibooks-computer-icons-desktop-ios-7-book-miscellaneous-blue-angle.png" id="libro" alt="">
+    <ul>
+        <li><a routerLink="/search" routerLinkActive="active-link">Inicio</a></li>
+        <li><a routerLink="login" routerLinkActive="active-link">Login</a></li>
+        <li><a routerLink="registro" routerLinkActive="active-link">Registro</a></li>
+        <li *ngIf="isLoggedIn">
+            <a href="#">{{ loggedInUserName }}</a> <!-- Mostrar el nombre del usuario aquí -->
+        </li>
+    </ul>
+</nav>

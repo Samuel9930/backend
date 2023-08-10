@@ -1,0 +1,94 @@
+<br><br>
+<div class="input-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Ingresa un término de búsqueda" (keyup.enter)="onSearch()">
+  <button (click)="onSearch()">Buscar</button>
+</div> <br><br>
+
+
+<div *ngIf="loading" class="msj">
+  <h2>Cargando...</h2>
+</div>
+<div *ngIf="books.length === 0 && !null" class="msj">
+  <h3>Desliza para ver los resultados de tu búsqueda  <span></span></h3><br>
+  <hr class="hr-divider">
+</div> <br>
+
+
+<div class="banner-container"><br><br>
+  <img src="https://concepto.de/wp-content/uploads/2016/04/leer.jpg" alt="Banner">
+  
+  <div class="banner-text">
+    <h1>Para viajar lejos no hay nada mejor que un libro</h1>
+    <p>Realiza una búsqueda para encontrar tus libros favoritos</p>
+  </div>
+ </div><br><br><br><br>
+
+
+
+
+<div class="cart-details">
+  <hr class="carritohr1">
+  <h2>Carrito de Compras</h2>
+
+  <div class="row cart-items">
+    <div class="col" *ngFor="let item of cartItems; let i = index">
+      <div class="cart-card">
+      <div class="cart-item-info">
+        <img [src]="item.volumeInfo.imageLinks?.thumbnail" alt="Portada del libro">
+        <p>{{ item.volumeInfo.title }}</p>
+      </div>
+      <div class="cart-item-details">
+        <div class="cart-item-actions">
+          <button (click)="decrementQuantity(i)">-</button>
+          {{ item.quantity }}
+          <button (click)="incrementQuantity(i)">+</button>
+          <button (click)="removeFromCart(i)">Eliminar</button>
+        </div>
+        <div class="cart-item-price">
+          Precio: {{ item.price | currency }}
+        </div>
+        <div class="cart-item-total">
+          Total: {{ item.price * item.quantity | currency }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-summary">
+    <p>Total: {{ total | currency }}</p>
+    <button (click)="clearCart()">Vaciar Carrito</button>
+  </div>
+   <br><br>
+  <hr class="carritohr">
+
+</div><br><br>
+
+
+
+<div *ngIf="loading" class="msj">
+  <h2>Cargando...</h2>
+</div>
+<div *ngIf="books.length === 0 && !loading" class="msj">
+  <h3>Aquí estaran tus resultados de búsqueda  <span class="arrow-down"></span></h3>
+  <hr class="hr-divider">
+</div><br><br>
+
+
+
+<div *ngIf="books.length > 0" class="row card-container">
+  <div class="col" *ngFor="let book of books">
+    <div class="card">
+      <img class="card-image" [src]="book.volumeInfo.imageLinks?.thumbnail" alt="Portada del libro">
+      <div class="card-content">
+        <h3 class="card-title">{{ book.volumeInfo.title }}</h3>
+        <p class="card-authors">{{ book.volumeInfo.authors?.join(', ') }}</p>
+    
+        <a [routerLink]="['/detail', book.volumeInfo.title]">Ver detalles</a>
+        <button (click)="addToCart(book)">Agregar al carrito</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,19 @@
+<div class="titule">
+  <h1>Detalle Libro</h1>
+</div>
+<div class="detail-container">
+  
+  <div class="image-container">
+    <img src="{{ bookDetails.volumeInfo.imageLinks.thumbnail }}" alt="Portada del libro">
+  </div>
+  <div class="info-container">
+    <h1>{{ bookDetails.volumeInfo.title }} <hr> </h1>
+    <p>Autores: {{ bookDetails.volumeInfo.authors?.join(', ') }}</p>
+    <p>Fecha de publicación: {{ bookDetails.volumeInfo.publishedDate }}</p>
+    <p>Editorial: {{ bookDetails.volumeInfo.publisher }}</p>
+    <p>Número de páginas: {{ bookDetails.volumeInfo.pageCount }}</p>
+    <p class="description">{{ bookDetails.volumeInfo.description }}</p>
+    <a href="{{ bookDetails.volumeInfo.previewLink }}" target="_blank">Vista previa</a>
+    <a href="{{ bookDetails.volumeInfo.infoLink }}" target="_blank">Enlace a Google Books</a>
+  </div>
+</div>

@@ -1,0 +1,268 @@
+/* Centrar el input */
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Ajusta el espacio entre el input y las cartas */
+}
+
+input[type="text"] {
+  /* Ajusta el ancho y otros estilos según sea necesario */
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+button {
+  margin-left: 10px; 
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #007bff; 
+  color: #fff; 
+  border: none; 
+  cursor: pointer;
+}
+
+button:hover{
+  color: rgba(4,97,162,255);
+  background-color: rgb(214, 214, 214);
+  border: 2px solid #007bff;
+}
+
+
+/*estilos del banner*/
+
+.banner-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  overflow: hidden; /* Evita que la imagen se desborde en caso de ser muy alta */
+  
+}
+
+.banner-container img {
+  width: 90%; /* Hace que la nedor */
+  max-height: 100%; /* Asegura que la imagen no sea más alta que el contenedor */
+  object-fit: cover; /* Ajusta la imagen manteniendo la   aspecto */
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px; 
+}
+
+/* Ajusta el tamaño y color del texto del banner según sea necesario */
+.banner-text h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+
+/* Estilos para las cartas */
+
+.card-container {
+  background-color: rgba(224, 223, 223, 0.808);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 20px 5px 20px 5px;
+  border: 1px solid #000000; /* Aplica un margen negativo para agregar espacio entre las cartas */
+  border-radius: 15px;
+}
+
+.col {
+  flex: 0 0 calc(20% - 10px); /* Ajusta el ancho de cada columna para 5 cartas por fila con espacio */
+  margin: 5px; /* Espacio entre las cartas */
+  box-sizing: border-box; /* Ajusta el box-sizing para incluir los márgenes en el cálculo del ancho */
+  max-width: calc(18% - 10px); /* Agrega un ancho máximo para asegurar que las cartas no se hagan demasiado grandes */
+}
+
+.card {
+  background-color: white;
+  width: 93%;
+  border: 3px solid #ccc;
+  border-radius: 10px; /* Añade el border-radius para las cartas */
+  padding: 10px;
+  /* Ajusta los estilos y colores según sea necesario */
+  display: flex; /* Agrega un contenedor flex para que los elementos dentro de la carta se muestren en fila */
+  overflow: hidden; /* Evita que los contenidos de la carta se desborden */
+}
+
+.card img {
+  flex: 0 0 30%; /* Ajusta el tamaño de la imagen */
+  height: 100px; /* Tamaño fijo de la imagen para evitar cambios de tamaño en las cartas */
+  margin-right: 10px; 
+  border-radius: 10px; 
+}
+
+.card-content {
+  flex: 1; /* Hace que el contenido tome todo el espacio disponible */
+  text-align: center;
+}
+
+/* Estilos para los enlaces de detalles */
+.card-content a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #007bff; 
+  text-decoration: none; /* Quita la decoración del enlace */
+  cursor: pointer;
+}
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05); /* Efecto de zoom al pasar el cursor por la carta */
+}
+
+
+
+/* Estilos para el mensaje */
+
+.msj {
+  font-family: Arial, sans-serif; /* Tipo de letra */
+  text-align: center; /* Centrar el contenido */
+}
+
+/* Estilos para la animación de flechas */
+.msj span::after {
+  content: ' ⇩ ⇩ ⇩' ; /* Agregar flechas hacia abajo */
+  animation: bounce 1.5s infinite; /* Aplicar animación */
+  display: inline-block;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Posición inicial y final */
+  }
+  40% {
+    transform: translateY(-10px); /* Posición en el punto más alto del rebote */
+  }
+  60% {
+    transform: translateY(-5px); /* Posición en el punto más bajo del rebote */
+  }
+}
+
+
+
+/* Estilos para el hr */
+.hr-divider {
+  display: block;
+  width: 20%;
+  height: 3px;
+  background-color: #3498db;
+  margin: 5px auto;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.hr-divider:hover {
+  transform: scaleX(3);
+}
+
+
+
+
+/*____carrito____*/
+
+.cart-details h2 {
+  color: #1173b5;
+  font-size: 30px;
+  text-align: center;
+}
+
+.carritohr1 {
+  background-color: #007bff;
+  height: 2px;
+  margin-bottom: 25px;
+}
+
+.cart-details {
+  text-align: center;
+  border: blue 1px;
+  
+}
+/* Estilos para los libros en el carrito */
+.cart-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+ 
+}
+
+.cart-card img {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.cart-item {
+  flex: 0 0 calc(20% - 10px); /* Ajusta el ancho de cada columna para 5 cartas por fila con espacio */
+  margin: 5px; /* Espacio entre las cartas */
+  box-sizing: border-box; /* Ajusta el box-sizing para incluir los márgenes en el cálculo del ancho */
+  max-width: calc(18% - 10px); /* Agrega un ancho máximo para asegurar que las cartas no se hagan demasiado grandes */
+ 
+}
+
+.cart-item-info p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cart-item-actions button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item-price {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.cart-item-total {
+  font-weight: bold;
+}
+
+.carritohr {
+  background-color: #007bff;
+  height: 2px;
+}
